@@ -1,51 +1,49 @@
-package Pessoa_Aluno_Prof;
 
 public class Pessoa {
-	
-	private int codigo;
-	private String endereco;
-	private String nome;
+	private String nome = "";
+	private String endereço = "";
 	
 	
-	public Pessoa(int codigo, String nome, String endereco) {
-		setCodigo(codigo);
+	public Pessoa(String nome, String endereço) {
+		setNome(nome); setEndereço(endereço);
+	}
+	public Pessoa(String nome) {
 		setNome(nome);
-		setEndereco(endereco);
-
-	}
-	
-	public int getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		if (endereco.length() > 0)
-		this.endereco = endereco;
 	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
-		if (nome.length() > 0)
+		if(nome!="")
 		this.nome = nome;
 	}
-
+	public String getEndereço() {
+		return endereço;
+	}
+	public void setEndereço(String endereço) {
+		if(endereço.length()>0)
+		this.endereço = endereço;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Pessoa [codigo=");
-		builder.append(codigo);
-		builder.append(", endereco=");
-		builder.append(endereco);
-		builder.append(", nome=");
+		builder.append("Pessoa [nome=");
 		builder.append(nome);
+		builder.append(", endereço=");
+		builder.append(endereço);
+		builder.append(", getNome()=");
+		builder.append(getNome());
+		builder.append(", getEndereço()=");
+		builder.append(getEndereço());
+		builder.append(", getClass()=");
+		builder.append(getClass());
+		builder.append(", hashCode()=");
+		builder.append(hashCode());
+		builder.append(", toString()=");
+		builder.append(super.toString());
+		builder.append("]");
 		return builder.toString();
 	}
-	
 
+	
 }
